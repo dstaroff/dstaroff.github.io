@@ -1,0 +1,150 @@
+:root {
+    --offset: 1rem;
+    --black-ratio: 0.1;
+    --light-gray: rgba(0, 0, 0, var(--black-ratio));
+    --lighter-gray: rgba(0, 0, 0, calc(var(--black-ratio) / 2));
+    --vk-blue-h: 212;
+    --vk-blue-s: 91.2%;
+    --vk-blue-l: 55.7%;
+    --vk-blue: hsl(var(--vk-blue-h), var(--vk-blue-s), var(--vk-blue-l));
+    --vk-blue-darker: hsl(var(--vk-blue-h), var(--vk-blue-s), min(max(calc(var(--vk-blue-l) - 20%), 0%), 100%));
+}
+
+@media print {
+    .more {
+        page-break-after: always;
+    }
+}
+
+.breadcrumb {
+    --bs-breadcrumb-divider: '>';
+}
+
+header {
+    background: linear-gradient(var(--vk-blue), var(--vk-blue-darker));
+}
+
+header span {
+    color: white;
+}
+
+header #birthday {
+    font-weight: lighter;
+}
+
+header .contacts a, header .socials a{
+    text-decoration: none;
+    color: white;
+}
+
+.section > i {
+    color: var(--vk-blue);
+}
+
+.timeline {
+    height: 100%;
+}
+
+.timeline .gap {
+    position: relative;
+    height: 100%;
+}
+
+.timeline .gap:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    border-style: solid;
+    border-width: 0 0 var(--offset) var(--offset);
+    border-color: transparent transparent var(--lighter-gray) transparent;        
+}
+
+.timeline .gap:after {
+    position: absolute;
+    margin-top: var(--offset);
+    left: calc(var(--offset) / 2);
+    content: "";
+    width: calc(var(--offset) / 2);
+    height: calc(100% - var(--offset));
+    background: var(--lighter-gray);
+    border-bottom-left-radius: var(--offset);
+}
+  
+.job {
+    border-bottom: 1pt solid var(--light-gray);
+}
+
+.task-list > li {
+    margin-bottom: var(--offset);
+    background-color: var(--lighter-gray);
+    border: 0 solid transparent;
+    border-radius: var(--offset);
+    padding: var(--offset);
+}
+
+.task-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.task-list > li p {
+    margin: 0;
+}
+
+.task-tech {
+    padding-top: var(--offset);
+}
+
+.task-tech > span {
+    background-color: var(--vk-blue);
+}
+
+.task-tech {
+    line-height: calc(var(--offset) * 2);
+}
+
+.company {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.project {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.events,
+.interactives,
+.achievements
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.events li,
+.interactives li,
+.achievements li
+{
+    margin: 0;
+}
+
+.events li::before,
+.interactives li::before,
+.achievements li::before
+{
+    content: "\2022";
+    color: var(--vk-blue);
+    font-weight: bold;
+    display: inline-block;
+    width: var(--offset);
+    margin-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--vk-blue-darker);
+}
+
+.badge {
+    background-color: var(--vk-blue);
+}
